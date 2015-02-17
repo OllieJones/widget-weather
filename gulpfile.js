@@ -50,8 +50,7 @@
   });
 
   gulp.task("source", ["lint"], function () {
-    return gulp.src(["./src/settings.html", "./src/current.html",
-      "./src/three-day.html", "./src/current-and-three-day.html"])
+    return gulp.src(["./src/settings.html", "./src/widget.html"])
       .pipe(usemin({
         css: [sourcemaps.init(), minifyCSS(), sourcemaps.write()],
         js: [sourcemaps.init(), uglify(), sourcemaps.write()]
@@ -60,8 +59,7 @@
   });
 
   gulp.task("unminify", function () {
-    return gulp.src(["./src/settings.html", "./src/current.html",
-      "./src/three-day.html", "./src/current-and-three-day.html"])
+    return gulp.src(["./src/settings.html", "./src/widget.html"])
       .pipe(usemin({
         css: [rename(function (path) {
           path.basename = path.basename.substring(0, path.basename.indexOf(".min"))
@@ -96,12 +94,9 @@
 
   // e2e testing
   gulp.task("html:e2e", factory.htmlE2E({
-    files: ["./src/settings.html", "./src/current.html", "./src/three-day.html",
-      "./src/current-and-three-day.html"],
+    files: ["./src/settings.html", "./src/widget.html"],
     e2eWeather: ["../node_modules/widget-tester/mocks/gadgets.io-mock.js", "../test/data/weather-api-mock-data.js"],
-    e2eCurrent: "../test/data/current-mock-data.js",
-    e2eThreeDay: "../test/data/three-day-mock-data.js",
-    e2eCurrentAndThreeDay: "../test/data/current-and-three-day-mock-data.js",
+    e2eCurrent: "../test/data/widget-mock-data.js"
   }));
 
   gulp.task("e2e:server", ["config", "html:e2e"], factory.testServer());
@@ -110,22 +105,14 @@
     testFiles: "test/e2e/settings-scenarios.js"
   }));
 
-  gulp.task("test:e2e:current", factory.testE2E({
-    testFiles: "test/e2e/current-scenarios.js"
-  }));
-
-  gulp.task("test:e2e:three-day", factory.testE2E({
-    testFiles: "test/e2e/three-day-scenarios.js"
-  }));
-
-  gulp.task("test:e2e:current-and-three-day", factory.testE2E({
-    testFiles: "test/e2e/current-and-three-day-scenarios.js"
+  gulp.task("test:e2e:widget", factory.testE2E({
+    testFiles: "test/e2e/widget-scenarios.js"
   }));
 
   gulp.task("e2e:server-close", factory.testServerClose());
 
   gulp.task("test:e2e", function(cb) {
-    runSequence(["html:e2e", "e2e:server"], "test:e2e:settings", "test:e2e:current", "test:e2e:three-day", "test:e2e:current-and-three-day", "e2e:server-close", cb);
+    runSequence(["html:e2e", "e2e:server"], "test:e2e:settings", "test:e2e:widget", "e2e:server-close", cb);
   });
 
   // Unit testing

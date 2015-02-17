@@ -1,10 +1,5 @@
 /* jshint ignore:start */
 if (typeof angular !== "undefined") {
-  angular.module("risevision.widget.weather.config", [])
-    .value("current", "https://s3.amazonaws.com/widget-weather-test/0.1.0/dist/current.html")
-    .value("threeDay", "https://s3.amazonaws.com/widget-weather-test/0.1.0/dist/three-day.html")
-    .value("currentAndThreeDay", "https://s3.amazonaws.com/widget-weather-test/0.1.0/dist/current-and-three-day.html")
-  ;
 
   angular.module("risevision.common.i18n.config", [])
     .constant("LOCALES_PREFIX", "locales/translation_")

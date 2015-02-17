@@ -1,7 +1,7 @@
 {
-  "name": "widget-weather",
-  "version": "0.1.0",
-  "description": "The Weather Widget uses the TinBu Weather API to retrieve weather for a given location.",
+  "name": "widget-forecast",
+  "version": "0.0.9",
+  "description": "The Forecast Widget uses the forecast.io API to retrieve weather for a given location.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp test",
@@ -9,22 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rise-Vision/widget-weather.git"
+    "url": "https://github.com/OllieJones/widget-forecast.git"
   },
   "keywords": [
     "risevision",
     "widget",
-    "weather"
+    "weather",
+    "forecast"
   ],
-  "author": "Donna Peplinskie",
+  "author": "Donna Peplinskie, Ollie Jones",
   "license": "GPLv3",
   "bucket": "widget-weather",
   "bugs": {
-    "url": "https://github.com/Rise-Vision/widget-weather/issues"
+    "url": "https://github.com/OllieJones/widget-forecast/issues"
   },
-  "homepage": "https://github.com/Rise-Vision/widget-weather",
+  "homepage": "https://github.com/OllieJones/widget-forecast",
   "devDependencies": {
-    "chai-as-promised": "~4.1.1",
+    "chai-as-promised": "*",
     "gulp": "~3.8.3",
     "gulp-bump": "~0.1.8",
     "gulp-jshint": "~1.5.5",
@@ -38,8 +39,8 @@
     "gulp-watch": "^0.6.8",
     "jshint-stylish": "^0.2.0",
     "karma": "~0.12.16",
-    "karma-chai": "^0.1.0",
-    "karma-chai-plugins": "^0.2.1",
+    "karma-chai": "*",
+    "karma-chai-plugins": "*",
     "karma-coverage": "~0.2.4",
     "karma-jasmine": "~0.1.5",
     "karma-junit-reporter": "^0.2.2",
@@ -50,7 +51,7 @@
     "protractor": "~1.0.0",
     "run-sequence": "^0.3.2",
     "sinon": "^1.12.1",
-    "sinon-chai": "^2.6.0",
+    "sinon-chai": "*",
     "widget-tester": "git://github.com/Rise-Vision/widget-tester.git"
   }
 }

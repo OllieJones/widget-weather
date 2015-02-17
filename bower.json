@@ -1,15 +1,16 @@
 {
-  "name": "widget-weather",
-  "version": "0.1.0",
-  "homepage": "https://github.com/Rise-Vision/widget-weather",
+  "name": "widget-forecast",
+  "version": "0.0.8",
+  "homepage": "https://github.com/OllieJones/widget-forecast",
   "authors": [
     "Donna Peplinskie <donna.peplinskie@risevision.com>"
   ],
-  "description": "The Weather Widget uses the TinBu Weather API to retrieve weather for a given location.",
+  "description": "The Forecast Widget uses the forecast.io API to retrieve weather for a given location.",
   "keywords": [
     "risevision",
     "widget",
-    "weather"
+    "weather",
+    "forecast"
   ],
   "license": "GPLv3",
   "private": true,
@@ -27,10 +28,11 @@
   "dependencies": {
     "angular": "1.2.18",
     "angular-route": "1.2.18",
+    "bootstrap": "3.3.2",
     "i18next": "1.7.7",
-    "widget-common": "https://github.com/Rise-Vision/widget-common.git",
-    "widget-settings-ui-components": "https://github.com/Rise-Vision/widget-settings-ui-components.git",
-    "widget-settings-ui-core": "https://github.com/Rise-Vision/widget-settings-ui-core.git"
+    "widget-common": "https://github.com/OllieJones/widget-common.git",
+    "widget-settings-ui-components": "https://github.com/OllieJones/widget-settings-ui-components.git",
+    "widget-settings-ui-core": "https://github.com/OllieJones/widget-settings-ui-core.git"
   },
   "resolutions": {
     "angular-translate": "~2.4.2",
